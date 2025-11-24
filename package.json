@@ -1,6 +1,6 @@
 {
   "name": "com.quanty-bandit.pattern",
-  "version": "1.0.0",
+  "version": "v1.0.0",
   "displayName": "qb.Pattern",
   "description": "Design pattern components",
   "unity": "6000.2",
