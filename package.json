@@ -4,6 +4,9 @@
   "displayName": "qb.Pattern",
   "description": "Design pattern components",
   "unity": "6000.2",
+    "gitDependencies": {
+	"com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git"
+	}
   "keywords": [
     "Design-Pattern"
   ],
