@@ -12,7 +12,8 @@ Monobehaviour singleton abstract class implementation with persistence and duppl
 
 **SOWithGUID**
 Implementation of an abstract scriptable object class with automatic serialization of the GUID.
-The serialized GUID allows a specific instance of an object to be identified at runtime. This identification is used in particular by the qb.Events and qb.Datas packages to resolve reference issues that may exist on addressable scenes.
+
+The serialized GUID allows a specific instance of an object to be identified at runtime. The GUID is used in particular by the qb.Events and qb.Datas packages to resolve reference issues that may exist on addressable scenes.
 
 
 
@@ -22,7 +23,7 @@ Custom Scriptable object singleton abstract class implementation.
 > **Remark**
 > Like ScriptableSingleton but with a different instantation way... 
 
-## 
+
 
 ## HOW TO INSTALL
 
