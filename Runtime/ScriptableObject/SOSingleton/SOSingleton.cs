@@ -13,10 +13,11 @@ namespace qb.Pattern
     /// <remarks>
     /// WARNING: THIS PATTERN DOES NOT SUPPORT INSTANTIATION AT RUNTIME!
     /// </remarks>
-    public abstract class SOSingleton<T> : ScriptableObject where T : ScriptableObject
+    public abstract class SOSingleton<T> : SOWithGUID where T : ScriptableObject
     {
-        protected virtual void Awake()
+        protected override void Awake()
         {
+            base.Awake();
 #if UNITY_EDITOR
             CheckUniqueInstance();
 #endif
