@@ -23,7 +23,7 @@ namespace qb.Pattern
     /// <typeparam paramName="T"></typeparam>
     public abstract class MBSingleton<T> : MonoBehaviour where T : MBSingleton<T>
     {
-        protected static ConcurrentDictionary<Type, MonoBehaviour> instances = new ConcurrentDictionary<Type, MonoBehaviour>();
+        private static ConcurrentDictionary<Type, MonoBehaviour> instances = new ConcurrentDictionary<Type, MonoBehaviour>();
 
         /// <summary>
         /// Virtual getter can be override by the concrete class.
