@@ -41,7 +41,7 @@ namespace qb.Pattern
         [Group("GUID")]
         public async virtual void UpdateGUID()
         {
-            if (updateGuidPending) return;
+            if (this==null || updateGuidPending) return;
             await Task.Yield();
             try
             {
