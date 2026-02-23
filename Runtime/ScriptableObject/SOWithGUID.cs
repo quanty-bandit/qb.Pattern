@@ -49,15 +49,20 @@ namespace qb.Pattern
                 //Waiting from the object AssetDatabase insertion 
                 while (!AssetDatabase.Contains(this))
                     await Task.Yield();
-
+                
                 var path = AssetDatabase.GetAssetPath(this);
-                var id = AssetDatabase.AssetPathToGUID(path);
-                if (id != _guid)
+                if (!string.IsNullOrEmpty(path))
                 {
-                    _guid = AssetDatabase.AssetPathToGUID(path);
-
-                    EditorUtility.SetDirty(this);
-                    AssetDatabase.SaveAssetIfDirty(this);
+                    var id = AssetDatabase.AssetPathToGUID(path);
+                    if (id != _guid)
+                    {
+                        _guid = AssetDatabase.AssetPathToGUID(path);
+                        if (this != null)
+                        {
+                            EditorUtility.SetDirty(this);
+                            AssetDatabase.SaveAssetIfDirty(this);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
