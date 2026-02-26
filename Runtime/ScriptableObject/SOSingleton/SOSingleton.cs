@@ -1,5 +1,4 @@
 using UnityEngine;
-
 #if UNITY_EDITOR
 using UnityEditor;
 using System.Threading.Tasks;
@@ -40,7 +39,13 @@ namespace qb.Pattern
             //Debug.Log(sFind);
 
             while (!AssetDatabase.Contains(this))
+#if UNITY_WEBGL
+               await Awaitable.NextFrameAsync();
+                            
+#else
                 await Task.Yield();
+#endif
+
 
             var guids = AssetDatabase.FindAssets(sFind);
 
